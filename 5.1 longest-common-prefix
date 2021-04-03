@@ -1,0 +1,10 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if strs == []: return ""
+        prefix = ""
+        for i in zip(*strs):
+            if ( all(item == i[0] for item in i) ):
+                prefix += i[0]
+            else:
+                break
+        return prefix       
